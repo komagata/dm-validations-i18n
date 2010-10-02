@@ -1,6 +1,11 @@
 = dm-validations-i18n
 
-Description goes here.
+Localize error messages in dm-validations.
+
+== Usage
+
+  require 'dm-validations-i18n'
+  DataMapper::Validations::I18n.localize! 'ja'
 
 == Note on Patches/Pull Requests
  
