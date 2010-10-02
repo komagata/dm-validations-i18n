@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "dm-validations-i18n.gemspec",
      "lib/dm-validations-i18n.rb",
      "locale/en.yml",
      "locale/ja.yml",
