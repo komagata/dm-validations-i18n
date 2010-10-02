@@ -10,6 +10,7 @@ begin
     gem.email = "komagata@gmail.com"
     gem.homepage = "http://github.com/komagata/dm-validations-i18n"
     gem.authors = ["Masaki KOMAGATA"]
+    gem.add_dependency "dm-validations", ">= 1.0.2"
     gem.add_development_dependency "shoulda", ">= 2.11.3"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
