@@ -18,10 +18,16 @@ module DataMapper
           DataMapper::Validations::ValidationErrors.default_error_messages = data
         end
 
-        def translate_field_name_with(x)
-          if (x.is_a? Hash)
+        def translate_field_name_with(x = nil, &cb)
+          if (!x && cb)
+            translate_field_name_with_cb(cb)
+          elsif (x.is_a? Hash)
             translate_field_name_with_hash(x)
           end
+        end
+
+        def translate_field_name_with_cb(x)
+          self.field_name_translation_method = x
         end
 
         def translate_field_name_with_hash(x)

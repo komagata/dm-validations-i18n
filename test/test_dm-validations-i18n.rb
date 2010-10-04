@@ -31,6 +31,14 @@ class TestDmValidationsI18n < Test::Unit::TestCase
   # end
 
   context 'DataMapper::Validations::ValidationErrors.default_error_message' do
+    should "localize field names with callback" do
+      DataMapper::Validations::I18n.localize!('zh-TW')
+      DataMapper::Validations::I18n.translate_field_name_with do |field|
+        "Dummy"
+      end
+      assert_equal 'Dummy 無效', DataMapper::Validations::ValidationErrors.default_error_message(:invalid, :height)
+    end
+
     should "localize field names with hash" do
       DataMapper::Validations::I18n.localize!('zh-TW')
       DataMapper::Validations::I18n.translate_field_name_with({'zh-TW' => { "height" => "高度", "weight" => "重量" }})
