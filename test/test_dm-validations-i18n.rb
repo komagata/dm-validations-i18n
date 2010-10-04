@@ -19,4 +19,35 @@ class TestDmValidationsI18n < Test::Unit::TestCase
       assert_equal '%sがありません。', Foo.default_error_messages[:absent]
     end
   end
+
+  # context 'localized field names with callback' do
+  #   DataMapper::Validations::I18n.translate_field_name_with do |field_name|
+  #     assert_equal field_name, 'foo'
+  #   end
+  # end
+  # context 'localized field names with rails I18n.t' do
+  #   # mock I18n.t(field, "dm-validation")
+  #   DataMapper::Validations::I18n.translate_field_name_with :rails
+  # end
+
+  context 'DataMapper::Validations::ValidationErrors.default_error_message' do
+    should "localize field names with hash" do
+      DataMapper::Validations::I18n.localize!('zh-TW')
+      DataMapper::Validations::I18n.translate_field_name_with({'zh-TW' => { "height" => "高度", "weight" => "重量" }})
+
+      assert_equal '%s 無效', DataMapper::Validations::ValidationErrors.send(:class_variable_get, '@@default_error_messages')[:invalid]
+
+      assert_equal '高度 無效', DataMapper::Validations::ValidationErrors.default_error_message(:invalid, :height)
+      assert_equal '重量 無效', DataMapper::Validations::ValidationErrors.default_error_message(:invalid, :weight)
+
+      assert_equal 'length 無效', DataMapper::Validations::ValidationErrors.default_error_message(:invalid, :length), "Fallback to original field name if missing the translated version."
+    end
+
+    should "localize field names with hash, even with diffenert setup order." do
+      DataMapper::Validations::I18n.translate_field_name_with({'zh-TW' => { "height" => "高度", "weight" => "重量" }})
+      DataMapper::Validations::I18n.localize!('zh-TW')
+      assert_equal '高度 無效', DataMapper::Validations::ValidationErrors.default_error_message(:invalid, :height)
+      assert_equal 'length 無效', DataMapper::Validations::ValidationErrors.default_error_message(:invalid, :length), "Fallback to original field name if missing the translated version."
+    end
+  end
 end
