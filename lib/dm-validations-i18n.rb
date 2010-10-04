@@ -24,6 +24,8 @@ module DataMapper
               FieldNameTranslator::Callback.new(self, &cb)
             elsif (x.is_a? Hash)
               FieldNameTranslator::Hash.new(self, x)
+            elsif (x == :rails)
+              FieldNameTranslator::Rails.new(self)
             end
         end
 
@@ -58,6 +60,15 @@ module DataMapper
           self.context = context
           self.callback = lambda do |field|
             dict[field.to_s] || field
+          end
+        end
+      end
+
+      class Rails < Callback
+        def initialize(context)
+          self.context = context
+          self.callback = lambda do |field|
+            ::I18n.t(field)
           end
         end
       end

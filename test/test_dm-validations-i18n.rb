@@ -31,6 +31,20 @@ class TestDmValidationsI18n < Test::Unit::TestCase
   # end
 
   context 'DataMapper::Validations::ValidationErrors.default_error_message' do
+    should "localize field names with Rails way: I18n.t is used." do
+      # mock I18n.t
+      class ::I18n
+        def self.t(x)
+          "Dummy I18n.t"
+        end
+      end
+
+      DataMapper::Validations::I18n.localize!('zh-TW')
+      DataMapper::Validations::I18n.translate_field_name_with :rails
+
+      assert_equal("Dummy I18n.t 無效", DataMapper::Validations::ValidationErrors.default_error_message(:invalid, :height))
+    end
+
     should "localize field names with callback" do
       DataMapper::Validations::I18n.localize!('zh-TW')
       DataMapper::Validations::I18n.translate_field_name_with do |field|
