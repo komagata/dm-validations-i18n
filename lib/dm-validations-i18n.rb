@@ -6,7 +6,7 @@ module DataMapper
     module I18n
       class << self
         cattr_accessor :locale
-        cattr_accessor :field_name_translation_method
+        cattr_accessor :field_name_translator
 
         def localize!(locale)
           self.locale = locale
@@ -19,22 +19,12 @@ module DataMapper
         end
 
         def translate_field_name_with(x = nil, &cb)
-          if (!x && cb)
-            translate_field_name_with_cb(cb)
-          elsif (x.is_a? Hash)
-            translate_field_name_with_hash(x)
-          end
-        end
-
-        def translate_field_name_with_cb(x)
-          self.field_name_translation_method = x
-        end
-
-        def translate_field_name_with_hash(x)
-          self.field_name_translation_method = lambda do |field|
-            dict = x[self.locale]
-            dict[field.to_s] || field
-          end
+          self.field_name_translator =
+            if (!x && cb)
+              FieldNameTranslator::Callback.new(self, &cb)
+            elsif (x.is_a? Hash)
+              FieldNameTranslator::Hash.new(self, x)
+            end
         end
 
         def load_locale(locale)
@@ -46,13 +36,39 @@ module DataMapper
         end
       end
     end
+
+    module FieldNameTranslator
+      class Callback
+        attr_accessor :context, :callback
+
+        def initialize(context, &cb)
+          self.context  = context
+          self.callback = cb
+        end
+
+        def translate(field)
+          self.callback.call(field)
+        end
+      end
+
+      class Hash < Callback
+        def initialize(context, x)
+          dict = x[context.locale]
+
+          self.context = context
+          self.callback = lambda do |field|
+            dict[field.to_s] || field
+          end
+        end
+      end
+    end
   end
 end
 
 class DataMapper::Validations::ValidationErrors
   class << self
     def default_error_message_with_localized_field_name(key, field, *values)
-      field = DataMapper::Validations::I18n.field_name_translation_method.call(field)
+      field = DataMapper::Validations::I18n.field_name_translator.translate(field)
       @@default_error_messages[key] % [field, *values].flatten
     end
 
