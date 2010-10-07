@@ -79,7 +79,12 @@ end
 class DataMapper::Validations::ValidationErrors
   class << self
     def default_error_message_with_localized_field_name(key, field, *values)
-      field = DataMapper::Validations::I18n.field_name_translator.translate(field)
+      translator = DataMapper::Validations::I18n.field_name_translator
+
+      if translator
+        field = translator.translate(field)
+      end
+
       @@default_error_messages[key] % [field, *values].flatten
     end
 

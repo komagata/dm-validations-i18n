@@ -20,17 +20,15 @@ class TestDmValidationsI18n < Test::Unit::TestCase
     end
   end
 
-  # context 'localized field names with callback' do
-  #   DataMapper::Validations::I18n.translate_field_name_with do |field_name|
-  #     assert_equal field_name, 'foo'
-  #   end
-  # end
-  # context 'localized field names with rails I18n.t' do
-  #   # mock I18n.t(field, "dm-validation")
-  #   DataMapper::Validations::I18n.translate_field_name_with :rails
-  # end
-
   context 'DataMapper::Validations::ValidationErrors.default_error_message' do
+    should "not localize field names if not asked to" do
+      # manually set to nil, beacuse this test might not be the first to run.
+      DataMapper::Validations::I18n.field_name_translator = nil
+
+      DataMapper::Validations::I18n.localize!('zh-TW')
+      assert_equal("height 無效", DataMapper::Validations::ValidationErrors.default_error_message(:invalid, :height))
+    end
+
     should "localize field names with Rails way: I18n.t is used." do
       # mock I18n.t
       class ::I18n
