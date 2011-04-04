@@ -1,0 +1,22 @@
+absent: %s non deve essere presente
+inclusion: %s deve essere un valore tra questi: %s
+invalid: %s ha un formato non valido
+confirmation: %s non è confermata
+accepted: %s non è accettato/a
+'nil': %s non deve essere nullo
+blank: %s non deve essere vuoto
+length_between: %s deve essere tra %s e %s caratteri
+too_long: %s deve essere massimo %s caratteri
+too_short: %s deve essere minimo %s caratteri
+wrong_length: %s deve essere %s caratteri
+taken: %s è già in uso
+not_a_number: %s deve essere un numero
+not_an_integer: %s deve essere un numero intero
+greater_than: %s deve essere più grande di %s
+greater_than_or_equal_to: %s deve essere più grande o uguale a %s
+equal_to: %s deve essere uguale a %s
+not_equal_to: %s non deve essere uguale a %s
+less_than: %s deve essere minore di %s
+less_than_or_equal_to: %s deve essere minore o uguale a %s
+value_between: %s deve essere tra %s e %s
+primitive: %s deve essere di tipo %s
