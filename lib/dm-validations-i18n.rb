@@ -1,5 +1,6 @@
 require 'dm-validations'
 require 'yaml'
+require 'class'
 
 module DataMapper
   module Validations
