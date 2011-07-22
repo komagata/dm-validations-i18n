@@ -10,7 +10,7 @@ blank: "%s 不能是空的"
 length_between: '%s 長度必須介於 %s 跟 %s 之間'
 too_long: '%s 長度過長 (最多 %s 個字)'
 too_short: '%s 過短 (最少 %s 個字)'
-wrong_length: '%s 長度錯誤 (必需是 %s 個字)"'
+wrong_length: '%s 長度錯誤 (必需是 %s 個字)'
 taken: '%s 已經被使用'
 not_a_number: '%s 不是數字'
 not_an_integer: '%s 必須是指整數'

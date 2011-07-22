@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'helper'
 
 class TestDmValidationsI18n < Test::Unit::TestCase

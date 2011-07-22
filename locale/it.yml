@@ -1,5 +1,5 @@
 absent: "%s non deve essere presente"
-inclusion: ""%s deve essere un valore tra questi: "%s""
+inclusion: '%s deve essere un valore tra questi: "%s'
 invalid: "%s ha un formato non valido"
 confirmation: "%s non è confermata"
 accepted: "%s non è accettato/a"

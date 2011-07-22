@@ -1,6 +1,6 @@
 absent: "%sがありません。"
 inclusion: "%sは%sにありません。"
-invalid: "%sは不正な値です。 "
+invalid: "%sは不正な値です。"
 confirmation: "%sが一致しません。"
 accepted: "%sは受諾できません。"
 nil: "%sはnil以外を入力してください。"
