@@ -1,29 +1,29 @@
-absent: '%s 必须留空'
-inclusion: '%s 不在列表中'
-exclusion: '%s 被保留'
-invalid: '%s 无效'
-confirmation: "%s 与确认不相符"
-accepted: '%s 必须同意'
-nil: '%s 不能是空的'
-empty: "%s 不能是空的"
-blank: "%s 不能是空的"
-length_between: '%s 长度必须介于 %s 跟 %s 之间'
-too_long: '%s 长度过长 (最多 %s 个字)'
-too_short: '%s 过短 (最少 %s 个字)'
-wrong_length: '%s 长度错误 (必需是 %s 个字)"'
-taken: '%s 已经被使用'
-not_a_number: '%s 不是数字'
-not_an_integer: '%s 必须是指整数'
-greater_than: '%s 必须大于 %s'
-greater_than_or_equal_to: '%s 必须大于等于 %s'
-equal_to: '%s 必须等于 %s'
-not_equal_to: '%s 必须不等于 %s'
-less_than: '%s 必须小于 %s'
-less_than_or_equal_to: '%s 必须小于等于 %s'
-value_between: '%s 必须介于 %s 与 %s 之间'
-odd: '必须是奇数'
-even: '必须是偶数'
-primitive: '%s 必须是 %s 类型'
-not_found: '%s 不存在'
-already_confirmed: '%s 已经确认'
-not_locked: '%s 没有被锁定'
+absent: "'%s 必须留空'"
+inclusion: "'%s 不在列表中'"
+exclusion: "'%s 被保留'"
+invalid: "'%s 无效'"
+confirmation: ""%s 与确认不相符""
+accepted: "'%s 必须同意'"
+nil: "'%s 不能是空的'"
+empty: ""%s 不能是空的""
+blank: ""%s 不能是空的""
+length_between: "'%s 长度必须介于 %s 跟 %s 之间'"
+too_long: "'%s 长度过长 (最多 %s 个字)'"
+too_short: "'%s 过短 (最少 %s 个字)'"
+wrong_length: "'%s 长度错误 (必需是 %s 个字)'"
+taken: "'%s 已经被使用'"
+not_a_number: "'%s 不是数字'"
+not_an_integer: "'%s 必须是指整数'"
+greater_than: "'%s 必须大于 %s'"
+greater_than_or_equal_to: "'%s 必须大于等于 %s'"
+equal_to: "'%s 必须等于 %s'"
+not_equal_to: "'%s 必须不等于 %s'"
+less_than: "'%s 必须小于 %s'"
+less_than_or_equal_to: "'%s 必须小于等于 %s'"
+value_between: "'%s 必须介于 %s 与 %s 之间'"
+odd: "'必须是奇数'"
+even: "'必须是偶数'"
+primitive: "'%s 必须是 %s 类型'"
+not_found: "'%s 不存在'"
+already_confirmed: "'%s 已经确认'"
+not_locked: "'%s 没有被锁定'"
