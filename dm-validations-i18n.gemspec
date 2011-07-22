@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{dm-validations-i18n}
-  s.version = "0.3.2"
+  s.version = "0.3.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Masaki Komagata"]
-  s.date = %q{2011-04-06}
+  s.date = %q{2011-07-22}
   s.description = %q{Localize error messages in dm-validations.}
   s.email = %q{komagata@gmail.com}
   s.extra_rdoc_files = [
@@ -30,6 +30,7 @@ Gem::Specification.new do |s|
     "locale/en.yml",
     "locale/it.yml",
     "locale/ja.yml",
+    "locale/ru.yml",
     "locale/zh-CN.yml",
     "locale/zh-TW.yml",
     "test/helper.rb",
@@ -38,7 +39,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/komagata/dm-validations-i18n}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.4.2}
+  s.rubygems_version = %q{1.6.2}
   s.summary = %q{localize dm-validations}
   s.test_files = [
     "test/helper.rb",
