@@ -1,0 +1,22 @@
+absent: %s должно отсутствовать
+inclusion: %s должен быть одним из %s
+invalid: %s имеет не правильный формат
+confirmation: %s не соответствует подтверждению
+accepted: %s не принят
+'nil': %s не должен быть нулевым
+blank: %s не должен быть пустым
+length_between: %s должен быть между %s и %s длиной символов
+too_long: %s должно быть не больше %s символов
+too_short: %s должно быть не менее %s символов
+wrong_length: %s должен быть %s символов
+taken: %s уже занято
+not_a_number: %s должно быть числом
+not_an_integer: %s должно быть целым числом
+greater_than: %s должно быть больше, чем %s
+greater_than_or_equal_to: %s должен быть больше или равно %s
+equal_to: %s должно быть равно %s
+not_equal_to: %s не должно быть равно %s
+less_than: %s должно быть меньше, чем %s
+less_than_or_equal_to: %s должно быть меньше или равно %s
+value_between: %s должно быть между %s и %s
+primitive: %s должно быть типа %s
