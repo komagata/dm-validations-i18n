@@ -1,31 +1,4 @@
-require 'rubygems'
-require 'bundler'
-begin
-  Bundler.setup(:default, :development)
-rescue Bundler::BundlerError => e
-  $stderr.puts e.message
-  $stderr.puts "Run `bundle install` to install missing gems"
-  exit e.status_code
-end
-require 'rake'
-
-require 'jeweler'
-Jeweler::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "dm-validations-i18n"
-  gem.homepage = "http://github.com/komagata/dm-validations-i18n"
-  gem.license = "MIT"
-  gem.summary = %Q{localize dm-validations}
-  gem.description = %Q{Localize error messages in dm-validations.}
-  gem.email = "komagata@gmail.com"
-  gem.authors = ["Masaki Komagata"]
-  # Include your dependencies below. Runtime dependencies are required when using your gem,
-  # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
-  gem.add_runtime_dependency 'dm-validations', '>= 1.0.2'
-  #  gem.add_development_dependency 'rspec', '> 1.2.3'
-end
-Jeweler::RubygemsDotOrgTasks.new
-
+require "bundler/gem_tasks"
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
   test.libs << 'lib' << 'test'
@@ -33,19 +6,12 @@ Rake::TestTask.new(:test) do |test|
   test.verbose = true
 end
 
-require 'rcov/rcovtask'
-Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-end
-
 task :default => :test
 
-require 'rake/rdoctask'
+require 'rdoc/task'
+require 'data_mapper/validations/i18n/version'
 Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
-
+  version = DataMapper::Validations::I18n::VERSION
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title = "dm-validations-i18n #{version}"
   rdoc.rdoc_files.include('README*')

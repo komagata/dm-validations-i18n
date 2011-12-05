@@ -1,34 +1,22 @@
+PATH
+  remote: .
+  specs:
+    dm-validations-i18n (0.3.4)
+      dm-validations
+
 GEM
   remote: http://rubygems.org/
   specs:
     addressable (2.2.6)
-    dm-core (1.1.0)
-      addressable (~> 2.2.4)
-    dm-validations (1.1.0)
-      dm-core (~> 1.1.0)
-    git (1.2.5)
-    guard (0.5.1)
-      thor (~> 0.14.6)
-    guard-test (0.3.0)
-      guard (>= 0.2.2)
-      test-unit (~> 2.2)
-    jeweler (1.5.2)
-      bundler (~> 1.0.0)
-      git (>= 1.2.5)
-      rake
-    rake (0.9.2)
-    rcov (0.9.9)
+    dm-core (1.2.0)
+      addressable (~> 2.2.6)
+    dm-validations (1.2.0)
+      dm-core (~> 1.2.0)
     shoulda (2.11.3)
-    test-unit (2.3.0)
-    thor (0.14.6)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.0.0)
-  dm-validations (>= 1.0.2)
-  guard-test
-  jeweler (~> 1.5.2)
-  rcov
-  shoulda (>= 2.11.3)
+  dm-validations-i18n!
+  shoulda
