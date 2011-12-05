@@ -32,7 +32,7 @@ module DataMapper
         end
 
         def load_locale(locale)
-          load_yml File.join(File.dirname(__FILE__), '..', 'locale', "#{locale}.yml")
+          load_yml File.join(File.dirname(__FILE__), '..', '..', '..', 'locale', "#{locale}.yml")
         end
 
         def load_yml(filename)
