@@ -20,5 +20,6 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'shoulda', '~> 2.11.3'
   s.add_development_dependency 'rake', '~> 0.9.2.2'
+  s.add_development_dependency 'rdoc', '~> 3.11'
   s.add_runtime_dependency 'dm-validations', '~> 1.2.0'
 end
