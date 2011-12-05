@@ -1,4 +1,4 @@
-# dm-validations-i18n
+# dm-validations-i18n [<img src="https://secure.travis-ci.org/komagata/dm-validations-i18n.png"/>](http://travis-ci.org/komagata/dm-validations-i18n)
 
 Localize error messages in dm-validations.
 
