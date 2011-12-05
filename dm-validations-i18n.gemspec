@@ -1,7 +1,6 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "data_mapper/validations/i18n"
-require "data_mapper/validations/i18n/version"
+require 'dm-validations-i18n'
 
 Gem::Specification.new do |s|
   s.name        = "dm-validations-i18n"
