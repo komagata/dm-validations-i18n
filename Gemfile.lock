@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     dm-validations-i18n (0.3.4)
-      dm-validations
+      dm-validations (~> 1.2.0)
 
 GEM
   remote: http://rubygems.org/
@@ -19,4 +19,4 @@ PLATFORMS
 
 DEPENDENCIES
   dm-validations-i18n!
-  shoulda
+  shoulda (~> 2.11.3)
