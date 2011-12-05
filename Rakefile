@@ -9,7 +9,7 @@ end
 task :default => :test
 
 require 'rdoc/task'
-require 'data_mapper/validations/i18n/version'
+require './lib/data_mapper/validations/i18n/version'
 Rake::RDocTask.new do |rdoc|
   version = DataMapper::Validations::I18n::VERSION
   rdoc.rdoc_dir = 'rdoc'
